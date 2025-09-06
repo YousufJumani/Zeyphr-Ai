@@ -1,0 +1,23 @@
+{
+  "name": "ai-therapist-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "socket.io-client": "^4.7.4",
+    "typescript": "^5.3.3",
+    "@types/node": "^20.11.16",
+    "@types/react": "^19.1.1",
+    "@types/react-dom": "^19.1.0"
+  },
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.0.12"
+  }
+}
