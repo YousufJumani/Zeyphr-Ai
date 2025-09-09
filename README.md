@@ -70,7 +70,7 @@ frontend/
 
 ```env
 # Backend API URL
-REACT_APP_BACKEND_URL=http://localhost:3001
+REACT_APP_BACKEND_URL=https://zeyphr-app-gm5d6.ondigitalocean.app
 
 # For production
 REACT_APP_BACKEND_URL=https://your-backend-domain.com

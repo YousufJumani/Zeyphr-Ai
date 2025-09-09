@@ -3,16 +3,14 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/',
   server: {
     port: 3000,
     proxy: {
       '/api': {
-        target: 'http://localhost:3001',
+  target: 'https://dolphin-app-zxvu8.ondigitalocean.app',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
+        // Remove the rewrite - keep the /api prefix for backend compatibility
       }
     }
   }
 });
-
