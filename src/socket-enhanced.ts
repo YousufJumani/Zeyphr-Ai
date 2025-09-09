@@ -1,4 +1,5 @@
 import { io, Socket } from 'socket.io-client';
+import { SOCKET_CONFIG } from './config';
 
 // Singleton socket wrapper with reference counting to survive StrictMode/HMR
 let socket: Socket | null = null;
@@ -13,7 +14,7 @@ let aiAudioHandler: ((audio: string) => void) | null = null;
 let readyToListenHandler: (() => void) | null = null;
 let errorHandler: ((message: string) => void) | null = null;
 
-const SERVER_URL = 'http://localhost:3001';
+const SERVER_URL = SOCKET_CONFIG.SERVER_URL;
 
 export const initSocket = (): Socket | null => {
   initCount += 1;
