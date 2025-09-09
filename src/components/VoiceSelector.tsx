@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_ENDPOINTS } from '../config';
 
 interface VoiceConfig {
   gender: 'male' | 'female';
@@ -31,7 +32,7 @@ const VoiceSelector: React.FC<VoiceSelectorProps> = ({
 
   const loadCurrentVoice = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/voice/current');
+      const response = await fetch(API_ENDPOINTS.VOICE_CURRENT);
       const data = await response.json();
 
       if (data.success) {
@@ -52,7 +53,7 @@ const VoiceSelector: React.FC<VoiceSelectorProps> = ({
     console.log(`[VoiceSelector] Switching to ${gender} voice...`);
 
     try {
-      const response = await fetch('http://localhost:3001/api/voice/switch', {
+      const response = await fetch(API_ENDPOINTS.VOICE_SWITCH, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -87,7 +88,7 @@ const VoiceSelector: React.FC<VoiceSelectorProps> = ({
     console.log(`[VoiceSelector] Switching to ${mode} performance mode...`);
 
     try {
-      const response = await fetch('http://localhost:3001/api/voice/performance', {
+      const response = await fetch(API_ENDPOINTS.VOICE_PERFORMANCE, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
